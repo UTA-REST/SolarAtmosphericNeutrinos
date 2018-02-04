@@ -1,0 +1,10 @@
+#!/bin/sh
+
+Atmosphere="HybridModel.csv"
+HadronicModel="SIBYLL2.3_rc1"
+PrimaryModel="HillasGaisser_H4a"
+b="0.0"
+
+AtmospherePath="${SOLARATMHOME}/AtmProfiles/"
+
+python MCEqRun.py --atmosphere="${AtmospherePath}/${Atmosphere}" --dens_index=1 --hadronicmodel=$HadronicModel --runname=${HadronicModel}_${Atmosphere} --bvalues=$b --primarymodel=$PrimaryModel
